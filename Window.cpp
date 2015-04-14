@@ -73,7 +73,7 @@ void Window::run() {
 	}
 	initGlew = (glewInit());
 	if (initGlew != GLEW_OK) {
-    cerr << "[-] GLEW error: " << glewGetErrorString(initGlew) << endl;
+		cerr << "[-] GLEW error: " << glewGetErrorString(initGlew) << endl;
 		SDL_GL_DeleteContext(contextOpenGL);
 		SDL_DestroyWindow(window);
 		SDL_Quit();
@@ -89,7 +89,7 @@ void Window::run() {
 		glUseProgram(shader.getProgramId());
 		//Send modelview and projection matrix to Shader.
 		glUniformMatrix4fv(glGetUniformLocation(shader.getProgramId(), "modelview"), 1, GL_FALSE, value_ptr(_modelview));
-    glUniformMatrix4fv(glGetUniformLocation(shader.getProgramId(), "projection"), 1, GL_FALSE, value_ptr(_projection));
+		glUniformMatrix4fv(glGetUniformLocation(shader.getProgramId(), "projection"), 1, GL_FALSE, value_ptr(_projection));
 		//Display map.
 		landscape.display();
 		glUseProgram(0);
